@@ -1,1 +1,1 @@
-const API_URL = "https://telegram-mini-app-sample.onrender.com"
+const API_URL = "https://7e8f-197-210-226-80.ngrok-free.app"

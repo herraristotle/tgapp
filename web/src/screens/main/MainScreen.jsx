@@ -1,36 +1,53 @@
-import React, {useEffect} from 'react';
-import TelegramHeader from "../../components/kit/Header/TelegramHeader";
-import TelegramText from "../../components/kit/Text/TelegramText";
-import {useTelegram} from "../../hooks/useTelegram";
-import {useNavigate} from "react-router-dom";
-import { PATH_SERVER} from "../../constants/Paths";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import TelegramScreen from "../../components/kit/Screen/TelegramScreen";
-import TelegramDetailedButton from "../../components/kit/DetailedButton/TelegramDetailedButton";
+import TelegramText from "../../components/kit/Text/TelegramText";
+import TelegramButton from "../../components/kit/Button/TelegramButton";
+import './MainScreen.css';
 
-const Main = () => {
-    const {user} = useTelegram()
+const MainScreen = () => {
     const navigate = useNavigate();
 
+    const handleLetsGoClick = () => {
+        navigate('/user-role');
+    };
+
     return (
-        <TelegramScreen showbackbutton={false}>
-            <TelegramHeader>
-                <TelegramText className={'telegramTitle'}>Main Screen</TelegramText>
-            </TelegramHeader>
-
-            <TelegramText>Welcome {user?.username}!</TelegramText>
-
-            <TelegramText className={'telegramSubtitle'}>Navigate to a screen:</TelegramText>
-
-            <TelegramDetailedButton
-                buttontitle={'Server Screen'}
-                buttondescription={
-                    'Interact with the bot server through REST API'
-                }
-                buttonlabel={'Navigate to Server Screen'}
-                onButtomClick={() => navigate(PATH_SERVER)}
-            />
+        <TelegramScreen className="wallet-screen">
+            <TelegramText className="wallet-title">Wallet in Telegram,</TelegramText>
+            <TelegramText className="wallet-subtitle">made for crypto</TelegramText>
+            
+            <div className="feature-list">
+                <div className="feature-item">
+                    <div className="feature-icon easy-to-buy"></div>
+                    <div className="feature-text">
+                        <TelegramText className="feature-title">Easy to buy</TelegramText>
+                        <TelegramText className="feature-description">Purchase Bitcoin, Toncoin, Notcoin and USDt by card or via P2P Market.</TelegramText>
+                    </div>
+                </div>
+                
+                <div className="feature-item">
+                    <div className="feature-icon send-to-friend"></div>
+                    <div className="feature-text">
+                        <TelegramText className="feature-title">Send to a friend</TelegramText>
+                        <TelegramText className="feature-description">Worldwide transfers on Telegram are instant and free.</TelegramText>
+                    </div>
+                </div>
+                
+                <div className="feature-item">
+                    <div className="feature-icon convenient-to-use"></div>
+                    <div className="feature-text">
+                        <TelegramText className="feature-title">Convenient to use</TelegramText>
+                        <TelegramText className="feature-description">Open your Wallet directly from the Telegram menu.</TelegramText>
+                    </div>
+                </div>
+            </div>
+            
+            <TelegramButton className="lets-go-button ripple-effect" onClick={handleLetsGoClick}>Let's go</TelegramButton>
+            
+            <TelegramText className="agreement-text">By tapping "Let's go" you agree to User Agreement</TelegramText>
         </TelegramScreen>
     );
 };
 
-export default Main;
+export default MainScreen;

@@ -1,0 +1,9 @@
+{
+    "scripts": {
+      "install-web": "cd web && npm install",
+      "install-backend": "cd backend && npm install",
+      "build-web": "cd web && npm run build",
+      "start-backend": "cd backend && npm start",
+      "heroku-postbuild": "npm run install-web && npm run install-backend && npm run build-web"
+    }
+  }

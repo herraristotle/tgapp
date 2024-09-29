@@ -5,6 +5,7 @@ import {Route, Routes, useNavigate} from "react-router-dom";
 import Main from "./screens/main/MainScreen";
 import {PATH_SERVER} from "./constants/Paths";
 import ServerScreen from "./screens/server/ServerScreen";
+import UserRoleScreen from "./screens/main/userRole";
 
 function App() {
     const {webApp} = useTelegram()
@@ -33,6 +34,7 @@ function App() {
             <Routes>
                 <Route index element={<Main/>}/>
                 <Route path={PATH_SERVER} element={<ServerScreen/>}/>
+                <Route path="/user-role" element={<UserRoleScreen/>}/>
             </Routes>
         </div>
     );

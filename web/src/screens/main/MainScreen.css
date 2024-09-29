@@ -1,0 +1,119 @@
+.wallet-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #1c2733;
+    color: white;
+    height: 100vh;
+}
+
+.wallet-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.wallet-subtitle {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.feature-list {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.feature-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 15px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.easy-to-buy::before {
+    content: '💰';
+}
+
+.send-to-friend::before {
+    content: '🌍';
+}
+
+.convenient-to-use::before {
+    content: '📱';
+}
+
+.feature-text {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.feature-description {
+    font-size: 14px;
+    color: #8e8e93;
+}
+
+.lets-go-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #50a8eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lets-go-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+    20% {
+        transform: scale(25, 25);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(40, 40);
+    }
+}
+
+.lets-go-button:hover::after {
+    animation: ripple 1.5s ease-out infinite;
+}
+
+.agreement-text {
+    font-size: 12px;
+    color: #8e8e93;
+}
